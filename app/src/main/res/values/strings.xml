@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Crud de Compras</string>
+    <string name="label_name">Nome:</string>
+    <string name="label_amount">Quantidade:</string>
+    <string name="hint_name">Nome</string>
+    <string name="hint_amount">Quantidade</string>
+    <string name="hint_brand">Marca</string>
+    <string name="hint_shelf_life">Validade</string>
+    <string name="action_save">Salvar</string>
+    <string name="hint_id">Id</string>
+
+    <string name="title_delete_shopping">Atenção</string>
+    <string name="message_delete_shopping">Deseja realmente excluir essa compra?</string>
+    <string name="action_confirm">Confirmar</string>
+    <string name="action_cancel">Cancelar</string>
+
+    <string name="error_msg_save_shopping">Não foi possível salvar a compra.</string>
+</resources>
