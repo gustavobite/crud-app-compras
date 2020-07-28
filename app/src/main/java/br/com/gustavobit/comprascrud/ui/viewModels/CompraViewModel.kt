@@ -5,15 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.gustavobit.comprascrud.common.State
-import br.com.gustavobit.comprascrud.domain.usecases.GetShopping
-import br.com.gustavobit.comprascrud.domain.usecases.SaveShopping
+import br.com.gustavobit.comprascrud.domain.usecases.BuscaCompra
+import br.com.gustavobit.comprascrud.domain.usecases.SalvarCompra
 import br.com.gustavobit.comprascrud.ui.mappers.toModel
 import br.com.gustavobit.comprascrud.ui.mappers.toViewData
 import kotlinx.coroutines.launch
 
 class CompraViewModel(
-    private val getShopping: GetShopping,
-    private val saveShopping: SaveShopping
+    private val buscaCompra: BuscaCompra,
+    private val salvarCompra: SalvarCompra
 ) : ViewModel() {
 
     private var _compras: ComprasViewData =
@@ -39,7 +39,7 @@ class CompraViewModel(
     fun saveShopping(compras: ComprasViewData) {
         viewModelScope.launch {
             _saveShoppingState.value = State.Loading
-            saveShopping.invoke(compra = compras.toModel()).fold(
+            salvarCompra.invoke(compra = compras.toModel()).fold(
                 failed = {
                     _saveShoppingState.value = State.Error
                 },
@@ -53,7 +53,7 @@ class CompraViewModel(
     fun fetchShopping(id: String) {
         viewModelScope.launch {
             _fetchShoppingState.value = State.Loading
-            getShopping.invoke(id = id).fold(
+            buscaCompra.invoke(id = id).fold(
                 failed = {
                     _fetchShoppingState.value = State.Error
                 },

@@ -8,7 +8,7 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 var createUiModule: Module = module {
-    viewModel { ComprasListViewModel(getAllShoppingUseCase = get(), deleteShopping = get()) }
-    viewModel { CompraViewModel(getShopping = get(), saveShopping = get()) }
+    viewModel { ComprasListViewModel(buscarTodasComprasUseCase = get(), excluirCompra = get()) }
+    viewModel { CompraViewModel(buscaCompra = get(), salvarCompra = get()) }
     factory { ComprasListController() }
 }

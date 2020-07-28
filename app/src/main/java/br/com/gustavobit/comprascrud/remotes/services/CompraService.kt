@@ -5,7 +5,7 @@ import br.com.gustavobit.comprascrud.remotes.dtos.CompraDTO
 import retrofit2.Response
 import retrofit2.http.*
 
-interface ShoppingService {
+interface CompraService {
 
     @POST("compra")
     suspend fun add(@Body compra: CompraDTO): ResponseDTO<CompraDTO>

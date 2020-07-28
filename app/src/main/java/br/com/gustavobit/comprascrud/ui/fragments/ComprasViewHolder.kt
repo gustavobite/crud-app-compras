@@ -1,4 +1,4 @@
-package br.com.gustavobit.comprascrud.ui.holders
+package br.com.gustavobit.comprascrud.ui.fragments
 
 import android.view.View
 import android.widget.ImageView

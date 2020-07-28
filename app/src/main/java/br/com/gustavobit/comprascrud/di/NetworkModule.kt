@@ -2,7 +2,7 @@ package br.com.gustavobit.comprascrud.di
 
 import android.content.Context
 import br.com.gustavobit.comprascrud.network.RetrofitFactory
-import br.com.gustavobit.comprascrud.remotes.services.ShoppingService
+import br.com.gustavobit.comprascrud.remotes.services.CompraService
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -14,7 +14,7 @@ val createNetworkModule: Module = module {
         createRetrofit(
             baseUrl = BASE_URL,
             context = get()
-        ).create(ShoppingService::class.java)
+        ).create(CompraService::class.java)
     }
 }
 

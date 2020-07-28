@@ -1,7 +1,7 @@
 package br.com.gustavobit.comprascrud.ui.controllers
 
 import com.airbnb.epoxy.TypedEpoxyController
-import br.com.gustavobit.comprascrud.ui.holders.shoppingViewHolder
+import br.com.gustavobit.comprascrud.ui.fragments.shoppingViewHolder
 import br.com.gustavobit.comprascrud.ui.viewModels.ComprasViewData
 
 class ComprasListController : TypedEpoxyController<List<ComprasViewData>>() {

@@ -2,7 +2,7 @@ package br.com.gustavobit.comprascrud.repositories
 
 import br.com.gustavobit.comprascrud.domain.models.Compra
 
-interface ShoppingRepository {
+interface CompraRepository {
 
     suspend fun add(compra: Compra)
 

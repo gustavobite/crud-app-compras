@@ -3,10 +3,10 @@ package br.com.gustavobit.comprascrud.remotes.repositories
 import br.com.gustavobit.comprascrud.domain.models.Compra
 import br.com.gustavobit.comprascrud.remotes.mappers.toDto
 import br.com.gustavobit.comprascrud.remotes.mappers.toModel
-import br.com.gustavobit.comprascrud.remotes.services.ShoppingService
-import br.com.gustavobit.comprascrud.repositories.ShoppingRepository
+import br.com.gustavobit.comprascrud.remotes.services.CompraService
+import br.com.gustavobit.comprascrud.repositories.CompraRepository
 
-class ShoppingRepositoryImpl(private val service: ShoppingService) : ShoppingRepository {
+class CompraRepositoryImpl(private val service: CompraService) : CompraRepository {
 
     override suspend fun add(compra: Compra) {
         service.add(compra = compra.toDto())

@@ -4,11 +4,11 @@ import br.com.gustavobit.comprascrud.common.Either
 import br.com.gustavobit.comprascrud.common.Failure
 import br.com.gustavobit.comprascrud.common.Success
 import br.com.gustavobit.comprascrud.domain.models.Compra
-import br.com.gustavobit.comprascrud.repositories.ShoppingRepository
+import br.com.gustavobit.comprascrud.repositories.CompraRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class SaveShopping(private val repository: ShoppingRepository) {
+class SalvarCompra(private val repository: CompraRepository) {
 
     suspend fun invoke(compra: Compra): Either<Exception, Unit> {
         return try {

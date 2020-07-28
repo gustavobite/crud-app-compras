@@ -5,14 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.gustavobit.comprascrud.common.State
-import br.com.gustavobit.comprascrud.domain.usecases.DeleteShopping
-import br.com.gustavobit.comprascrud.domain.usecases.GetAllShopping
+import br.com.gustavobit.comprascrud.domain.usecases.ExcluirCompra
+import br.com.gustavobit.comprascrud.domain.usecases.BuscarTodasCompras
 import br.com.gustavobit.comprascrud.ui.mappers.toViewData
 import kotlinx.coroutines.launch
 
 class ComprasListViewModel(
-    private val getAllShoppingUseCase: GetAllShopping,
-    private val deleteShopping: DeleteShopping
+    private val buscarTodasComprasUseCase: BuscarTodasCompras,
+    private val excluirCompra: ExcluirCompra
 ) : ViewModel() {
 
     private val _comprasList: MutableList<ComprasViewData> = mutableListOf()
@@ -31,7 +31,7 @@ class ComprasListViewModel(
     fun fetchShopping() {
         viewModelScope.launch {
             _fetchShoppingListState.value = State.Loading
-            getAllShoppingUseCase.invoke().fold(
+            buscarTodasComprasUseCase.invoke().fold(
                 failed = {
                     _fetchShoppingListState.value = State.Error
                 },
@@ -50,7 +50,7 @@ class ComprasListViewModel(
     fun deleteShopping(id: String) {
         viewModelScope.launch {
             _deleteShoppingState.value = State.Loading
-            deleteShopping.invoke(id = id).fold(
+            excluirCompra.invoke(id = id).fold(
                 failed = {
                     _deleteShoppingState.value = State.Error
                 },
